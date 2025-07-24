@@ -76,3 +76,18 @@ h1 {
   left: 0;
   z-index: 10;
 }
+.titulo {
+  text-align: center;
+  color: var(--strawberry);
+  font-size: 1.8rem;
+  margin-bottom: 0;
+}
+
+.subtitulo {
+  text-align: center;
+  color: var(--blueberry);
+  font-weight: 400;
+  font-size: 1.2rem;
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
