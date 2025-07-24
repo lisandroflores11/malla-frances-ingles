@@ -1,0 +1,78 @@
+:root {
+  --blueberry: #2C3F70;
+  --strawberry: #A5231C;
+  --buttercream: #C8D4E5;
+  --violet: #8089D2;
+  --meringe: #E8EBED;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: var(--buttercream);
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: var(--blueberry);
+}
+
+#malla-container {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  gap: 20px;
+}
+
+.año {
+  flex: 0 0 auto;
+  border: 2px solid var(--blueberry);
+  padding: 10px;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.ciclo {
+  margin-top: 10px;
+}
+
+.materia {
+  background-color: var(--blueberry);
+  color: white;
+  padding: 8px;
+  margin: 5px 0;
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.3s;
+}
+
+.materia[data-estado="aprobada"] {
+  background-color: var(--violet);
+  text-decoration: line-through;
+}
+
+.materia[data-estado="cursando"] {
+  background-color: var(--meringe);
+  color: black;
+}
+
+.materia[data-bloqueada="true"] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Tooltip */
+.materia:hover::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  background-color: #333;
+  color: white;
+  padding: 5px;
+  border-radius: 4px;
+  font-size: 0.8em;
+  white-space: pre-line;
+  top: 100%;
+  left: 0;
+  z-index: 10;
+}
